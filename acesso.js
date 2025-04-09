@@ -1,14 +1,15 @@
-document.getElementById('acesso-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    const codigo = document.getElementById('codigo').value;
-    const codigoCorreto = 'moranguinhodosid'; // Substitua pelo código correto que você quer usar
+ // Função para verificar o código de acesso
+ function verificarCodigo() {
+    const codigo = document.getElementById('codigoAcesso').value;
+    const codigoCorreto = "123456"; // Aqui você coloca o código correto
 
+    // Verifica se o código inserido é o correto
     if (codigo === codigoCorreto) {
-        // Redireciona para o projeto principal (por exemplo, tela principal do projeto)
-        window.location.href = 'https://alpha2k24.github.io/Tuka1year/'; // Substitua 'index.html' pela sua página principal
+        // Armazena no localStorage que o usuário tem acesso
+        localStorage.setItem('acessoPermitido', 'true');
+        // Redireciona para a página principal
+        window.location.href = "https://alpha2k24.github.io/Tuka1year/";
     } else {
-        // Mostra uma mensagem de erro se o código estiver incorreto
-        document.getElementById('erro').style.display = 'block';
+        alert('Código incorreto!');
     }
-});
+}
