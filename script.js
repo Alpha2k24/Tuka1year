@@ -1,3 +1,8 @@
+if (!localStorage.getItem('acessoPermitido')) {
+    // Redireciona para a página de acesso se o código não estiver armazenado
+    window.location.href = "acesso.html";
+}
+
 const imagens = document.querySelectorAll('.tuka');
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
