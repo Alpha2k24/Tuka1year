@@ -1,0 +1,170 @@
+*{
+    margin: 0;  
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Quicksand', sans-serif;
+    background: url(./nos2.jpeg) no-repeat center center fixed;
+    height: 100dvh;
+    background-size: cover;
+
+}
+.tela1{
+    height: 100dvh;
+    text-align: center;
+    color: #fff;
+    padding: 2rem;
+    background-size: cover;
+}
+
+.txtTela1{
+    background-color: rgba(233, 30, 99, 0.2);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.title{
+    font-size: 4rem;
+    margin: 2rem 0rem;
+    color: #E91E63;
+    text-shadow: 2px 2px 2px #000000;
+}
+
+.imagens {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.tuka {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    transition: opacity 0.5s ease-in-out;
+}
+
+.tuka.active {
+    display: block;
+}
+
+.carrocel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 1rem;
+}
+
+.carrocel button {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #E91E63;
+}
+
+button{
+    height: 3rem;
+    
+}
+
+.tela2 {
+    height: 100dvh;
+    background: linear-gradient(to bottom, #fff0f5, #ffe4ec);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.mensagem {
+    font-size: 1.5rem;
+    color: rgba(233, 30, 99, 1);
+    text-align: center;
+    z-index: 1;
+    padding: 20px;
+}
+
+.coracao {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/833/833472.png'); /* coração fofo */
+    background-size: cover;
+    animation: subir 4s ease-in infinite;
+    opacity: 0.8;
+}
+
+@keyframes subir {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+    }
+}
+
+//tamanho específico 1440x992
+@media (max-width: 1440px) {
+    .title {
+        font-size: 3rem;
+    }
+    .txtTela1 {
+        padding: 1.5rem;
+    }
+    .mensagem {
+        font-size: 1.2rem;
+    }
+    .coracao {
+        width: 20px;
+        height: 20px;
+    }
+
+    .imagem {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 3rem;
+    }
+    .txtTela1 {
+        padding: 1rem;
+    }
+    .mensagem {
+        font-size: 1.2rem;
+    }
+    .coracao {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2.5rem;
+    }
+    .txtTela1 {
+        padding: 0.5rem;
+    }
+    .mensagem {
+        font-size: 1rem;
+    }
+    .coracao {
+        width: 12px;
+        height: 12px;
+    }
+}
