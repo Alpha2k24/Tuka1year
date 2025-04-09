@@ -7,15 +7,11 @@
     <link rel="stylesheet" href="acesso.css">
 </head>
 <body>
-    <div class="acesso">
-        <h1>Insira o Código para Acessar</h1>
-        <form id="acesso-form">
-            <input type="password" id="codigo" placeholder="Digite o código" required />
-            <button type="submit">Acessar</button>
-        </form>
-        <p id="erro" style="color: red; display: none;">Código incorreto! Tente novamente.</p>
+    <div class="acesso-container">
+        <h1>Acesso Restrito</h1>
+        <input type="text" id="codigoAcesso" placeholder="Digite o código de acesso">
+        <button onclick="verificarCodigo()">Entrar</button>
     </div>
-
     <script src="acesso.js"></script>
 </body>
 </html>
