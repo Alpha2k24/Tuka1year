@@ -113,30 +113,6 @@ button{
     }
 }
 
-//tamanho específico 1440x992
-@media (max-width: 1440px) {
-    .title {
-        font-size: 3rem;
-    }
-    .txtTela1 {
-        padding: 1.5rem;
-    }
-    .mensagem {
-        font-size: 1.2rem;
-    }
-    .coracao {
-        width: 20px;
-        height: 20px;
-    }
-
-    .imagem {
-        width: 300px;
-        height: 300px;
-    }
-}
-
-
-
 @media (max-width: 768px) {
     .title {
         font-size: 3rem;
