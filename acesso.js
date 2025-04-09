@@ -2,7 +2,7 @@ document.getElementById('acesso-form').addEventListener('submit', function(event
     event.preventDefault();
     
     const codigo = document.getElementById('codigo').value;
-    const codigoCorreto = '12345'; // Substitua pelo código correto que você quer usar
+    const codigoCorreto = 'moranguinhodosid'; // Substitua pelo código correto que você quer usar
 
     if (codigo === codigoCorreto) {
         // Redireciona para o projeto principal (por exemplo, tela principal do projeto)
