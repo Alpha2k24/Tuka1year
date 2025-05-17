@@ -1,110 +1,56 @@
-if (!localStorage.getItem('acessoPermitido')) {
-    // Redireciona para a página de acesso se o código não estiver armazenado
-    window.location.href = "acesso.html";
+const telas = document.querySelectorAll('.tela');
+const audios = [];
+
+for (let i = 1; i <= 6; i++) {
+  audios.push(document.getElementById(`audio${i}`));
 }
 
-const imagens = document.querySelectorAll('.tuka');
-const prevBtn = document.querySelector('.prev');
-const nextBtn = document.querySelector('.next');
-let index = 0;
-let pause = false;
-
-function showImage(i) {
-    imagens.forEach(img => img.classList.remove('active'));
-    imagens[i].classList.add('active');
+function isInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return rect.top < window.innerHeight && rect.bottom > 0;
 }
 
-function nextImage() {
-    index = (index + 1) % imagens.length;
-    showImage(index);
-}
+let currentAudio = null;
 
-function prevImage() {
-    index = (index - 1 + imagens.length) % imagens.length;
-    showImage(index);
-}
-
-prevBtn.addEventListener('click', () => {
-    pause = true;
-    prevImage();
-    resetPause();
-});
-
-nextBtn.addEventListener('click', () => {
-    pause = true;
-    nextImage();
-    resetPause();
-});
-
-// Adiciona funcionalidade das setas do teclado
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'ArrowLeft') {  // Seta esquerda
-        pause = true;
-        prevImage();
-        resetPause();
+function handleScroll() {
+  telas.forEach((tela, index) => {
+    if (isInViewport(tela)) {
+      if (currentAudio !== audios[index]) {
+        if (currentAudio) currentAudio.pause();
+        currentAudio = audios[index];
+        currentAudio.currentTime = 0;
+        currentAudio.play();
+      }
     }
-
-    if (event.key === 'ArrowRight') {  // Seta direita
-        pause = true;
-        nextImage();
-        resetPause();
-    }
-
-    if (event.key === 'Enter') {  // Enter
-        pause = true;
-        nextImage();
-        resetPause();
-    }
-});
-
-function resetPause() {
-    clearTimeout(pauseTimeout);
-    pauseTimeout = setTimeout(() => {
-        pause = false;
-    }, 10000); // pausa 10s após interação
+  });
 }
 
-let pauseTimeout;
+const tela3 = document.querySelector('.tela7');
+const containerFinal = document.getElementById('container-coracoes-final');
 
-async function autoSlide() {
-    while (true) {
-        await new Promise(resolve => setTimeout(resolve, 5000));
-        if (!pause) {
-            nextImage();
-        }
-    }
+function criarCoracaoFinal() {
+  const coracao = document.createElement('div');
+  coracao.classList.add('coracao');
+  coracao.style.left = Math.random() * 100 + 'vw';
+  coracao.style.animationDuration = 2 + Math.random() * 3 + 's';
+  containerFinal.appendChild(coracao);
+
+  setTimeout(() => {
+    coracao.remove();
+  }, 5000);
 }
 
-showImage(index);
-autoSlide();
-
-// Coracoes
-
-
-const tela2 = document.getElementById('tela2');
-const container = document.getElementById('container-coracoes');
-
-function criarCoracao() {
-    const coracao = document.createElement('div');
-    coracao.classList.add('coracao');
-    coracao.style.left = Math.random() * 100 + 'vw';
-    coracao.style.animationDuration = 2 + Math.random() * 3 + 's';
-    container.appendChild(coracao);
-
-    setTimeout(() => {
-        coracao.remove();
-    }, 5000);
-}
-
-let coracoesSubindo = false;
+let coracoesFinalSubindo = false;
 
 window.addEventListener('scroll', () => {
-    const tela2Top = tela2.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
+  const tela3Top = tela3.getBoundingClientRect().top;
+  const windowHeight = window.innerHeight;
 
-    if (tela2Top < windowHeight && !coracoesSubindo) {
-        coracoesSubindo = true;
-        setInterval(criarCoracao, 300);
-    }
+  if (tela3Top < windowHeight && !coracoesFinalSubindo) {
+    coracoesFinalSubindo = true;
+    setInterval(criarCoracaoFinal, 300);
+  }
 });
 
+window.addEventListener('scroll', handleScroll);
+window.addEventListener('load', handleScroll);

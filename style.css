@@ -1,146 +1,186 @@
-*{
-    margin: 0;  
+html, body {
+    margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body{
+    overflow-x: hidden; /* <- ESSENCIAL */
+    scroll-snap-type: y mandatory;
+    height: 100vh;
     font-family: 'Quicksand', sans-serif;
-    background: url(./nos2.jpeg) no-repeat center center fixed;
-    height: 100dvh;
-    background-size: cover;
-
-}
-.tela1{
-    height: 100dvh;
-    text-align: center;
-    color: #fff;
-    padding: 2rem;
-    background-size: cover;
-}
-
-.txtTela1{
-    background-color: rgba(233, 30, 99, 0.2);
-    padding: 2rem;
-    border-radius: 10px;
-}
-
-.title{
-    font-size: 4rem;
-    margin: 2rem 0rem;
-    color: #E91E63;
-    text-shadow: 2px 2px 2px #000000;
-}
-
-.imagens {
-    width: 300px;
-    height: 300px;
+  }
+  
+  
+  .tela {
+    scroll-snap-align: start;
+    height: 100vh;
+    width: 100vw; /* <- melhor do que 100% */
+    max-width: 100vw;
     overflow: hidden;
-    position: relative;
-}
+    box-sizing: border-box;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  img {
+    width: min(80%, 300px);
+    height: auto;
+    max-height: 60vh;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-top: 1rem;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  }
+  
+  /* Animações diferentes */
+  .tela1 {
+    background: linear-gradient(#e91e63, #880e4f);
+    animation: fadeIn 3s ease-in-out;
+  }
+  
+  .tela2 {
+    background: linear-gradient(#f8bbd0, #ec407a);
+    animation: pulse 2s infinite;
+  }
+  
+  .tela3 {
+    background: linear-gradient(#f06292, #ba68c8);
+    animation: float 3s infinite alternate;
+  }
+  
+  .tela4 {
+    background: linear-gradient(#e1bee7, #9c27b0);
+    animation: slideIn 2s ease-out;
+  }
+  
+  .tela5 {
+    background: linear-gradient(#ffccbc, #ff8a65);
+    animation: zoomIn 2s ease-in;
+  }
+  
+  .tela6 {
+    background: linear-gradient(#b2ebf2, #00acc1);
+    animation: rotateIn 3s ease-in-out;
+  }
 
-.tuka {
+  .tela7 {
+    height: 100dvh;
+    background: linear-gradient(to top, #fff0f5, #ffe4ec);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    scroll-snap-align: start;
+  }
+  
+  #container-coracoes-final {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    display: none;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    transition: opacity 0.5s ease-in-out;
-}
+    pointer-events: none;
+    z-index: 0;
+  }
 
-.tuka.active {
-    display: block;
-}
-
-.carrocel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    gap: 1rem;
-}
-
-.carrocel button {
-    background: none;
-    border: none;
+  .tela7 .mensagem {
     font-size: 2rem;
-    cursor: pointer;
     color: #E91E63;
-}
-
-button{
-    height: 3rem;
-    
-}
-
-.tela2 {
-    height: 100dvh;
-    background: linear-gradient(to bottom, #fff0f5, #ffe4ec);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.mensagem {
-    font-size: 1.5rem;
-    color: rgba(233, 30, 99, 1);
     text-align: center;
     z-index: 1;
-    padding: 20px;
-}
-
-.coracao {
+    padding: 1rem;
+  }
+  .coracao {
     position: absolute;
-    width: 24px;
-    height: 24px;
-    background-image: url('https://cdn-icons-png.flaticon.com/512/833/833472.png'); /* coração fofo */
-    background-size: cover;
-    animation: subir 4s ease-in infinite;
+    bottom: 0;
+    width: 20px;
+    height: 20px;
+    background-color: pink;
+    animation: subir 5s linear forwards;
     opacity: 0.8;
-}
+    border-radius: 50%;
+  }
 
-@keyframes subir {
+  .botao-video {
+    display: inline-block;
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #e91e63, #ba68c8);
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(186, 104, 200, 0.6);
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    text-align: center;
+    user-select: none;
+  }
+
+  .botao-video:hover {
+    background: linear-gradient(45deg, #ba68c8, #e91e63);
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(186, 104, 200, 0.9);
+  }
+
+  .botao-video:active {
+    transform: scale(0.95);
+    box-shadow: 0 3px 10px rgba(186, 104, 200, 0.4);
+  }
+
+    
+  @keyframes subir {
     0% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
+      transform: translateY(0);
+      opacity: 1;
     }
     100% {
-        transform: translateY(-100vh) scale(1.5);
-        opacity: 0;
+      transform: translateY(-100vh);
+      opacity: 0;
     }
-}
-
-@media (max-width: 768px) {
-    .title {
-        font-size: 3rem;
-    }
-    .txtTela1 {
-        padding: 1rem;
-    }
-    .mensagem {
-        font-size: 1.2rem;
-    }
-    .coracao {
-        width: 16px;
-        height: 16px;
-    }
-}
-
-@media (max-width: 480px) {
-    .title {
-        font-size: 2.5rem;
-    }
-    .txtTela1 {
-        padding: 0.5rem;
-    }
-    .mensagem {
-        font-size: 1rem;
-    }
-    .coracao {
-        width: 12px;
-        height: 12px;
-    }
-}
+  }
+  
+  
+  
+  /* Keyframes */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+  }
+  
+  @keyframes slideIn {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+  
+  @keyframes zoomIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  
+  @keyframes rotateIn {
+    from { transform: rotate(-180deg); opacity: 0; }
+    to { transform: rotate(0); opacity: 1; }
+  }
+  
