@@ -1,186 +1,191 @@
+/* Estilo geral */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html, body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* <- ESSENCIAL */
-    scroll-snap-type: y mandatory;
-    height: 100vh;
-    font-family: 'Quicksand', sans-serif;
-  }
-  
-  
-  .tela {
-    scroll-snap-align: start;
-    height: 100vh;
-    width: 100vw; /* <- melhor do que 100% */
-    max-width: 100vw;
-    overflow: hidden;
-    box-sizing: border-box;
-    color: white;
-    display: flex;
+  font-family: 'Quicksand', sans-serif;
+  scroll-snap-type: y mandatory;
+  overflow-x: hidden;
+  height: 100vh;
+  background-color: #fff0f5;
+}
+
+.tela {
+  scroll-snap-align: start;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  animation: pulse 4s infinite alternate;
+}
+
+.painel {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+  color: #4a2c40;
+}
+
+/* Imagem na painel */
+.painel img {
+  width: 300px;
+  max-width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+}
+
+/* Texto ao lado da imagem */
+.painel .texto {
+  flex: 1;
+  font-size: 1.5rem;
+  font-family: 'Great Vibes', cursive;
+  line-height: 1.4;
+  color: #7a466a;
+}
+
+/* Mobile: empilha a imagem e o texto */
+@media (max-width: 600px) {
+  .painel {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
-    padding: 2rem;
   }
   
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  img {
-    width: min(80%, 300px);
-    height: auto;
-    max-height: 60vh;
-    object-fit: cover;
-    border-radius: 20px;
+  .painel .texto {
+    font-size: 1.3rem;
     margin-top: 1rem;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
   }
-  
-  /* Animações diferentes */
-  .tela1 {
-    background: linear-gradient(#e91e63, #880e4f);
-    animation: fadeIn 3s ease-in-out;
-  }
-  
-  .tela2 {
-    background: linear-gradient(#f8bbd0, #ec407a);
-    animation: pulse 2s infinite;
-  }
-  
-  .tela3 {
-    background: linear-gradient(#f06292, #ba68c8);
-    animation: float 3s infinite alternate;
-  }
-  
-  .tela4 {
-    background: linear-gradient(#e1bee7, #9c27b0);
-    animation: slideIn 2s ease-out;
-  }
-  
-  .tela5 {
-    background: linear-gradient(#ffccbc, #ff8a65);
-    animation: zoomIn 2s ease-in;
-  }
-  
-  .tela6 {
-    background: linear-gradient(#b2ebf2, #00acc1);
-    animation: rotateIn 3s ease-in-out;
-  }
+}
 
-  .tela7 {
-    height: 100dvh;
-    background: linear-gradient(to top, #fff0f5, #ffe4ec);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    scroll-snap-align: start;
-  }
-  
-  #container-coracoes-final {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
-  }
 
-  .tela7 .mensagem {
-    font-size: 2rem;
-    color: #E91E63;
-    text-align: center;
-    z-index: 1;
-    padding: 1rem;
-  }
-  .coracao {
-    position: absolute;
-    bottom: 0;
-    width: 20px;
-    height: 20px;
-    background-color: pink;
-    animation: subir 5s linear forwards;
-    opacity: 0.8;
-    border-radius: 50%;
-  }
+/* Cores de fundo suaves */
+.tela1 { background: linear-gradient(to bottom, #ffc1cc, #ffb6c1); }
+.tela2 { background: linear-gradient(to bottom, #ffe0f0, #eec6f0); }
+.tela3 { background: linear-gradient(to bottom, #d1c4e9, #b39ddb); }
+.tela4 { background: linear-gradient(to bottom, #f8bbd0, #f48fb1); }
+.tela5 { background: linear-gradient(to bottom, #b2dfdb, #80cbc4); }
+.tela6 { background: linear-gradient(to bottom, #fce4ec, #f8bbd0); }
+.tela7 {
+  background: linear-gradient(to top, #fffafc, #ffe4ec);
+  position: relative;
+  overflow: hidden;
+}
 
-  .botao-video {
-    display: inline-block;
-    padding: 15px 30px;
-    background: linear-gradient(45deg, #e91e63, #ba68c8);
-    color: white;
-    font-weight: bold;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(186, 104, 200, 0.6);
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-    text-decoration: none;
-    text-align: center;
-    user-select: none;
-  }
+/* Texto */
+h1 {
+  font-size: 2rem;
+  max-width: 90%;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
 
-  .botao-video:hover {
-    background: linear-gradient(45deg, #ba68c8, #e91e63);
-    transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(186, 104, 200, 0.9);
-  }
+.tela7 .mensagem {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: #d81b60;
+  z-index: 1;
+  margin: 1rem 0;
+}
 
-  .botao-video:active {
-    transform: scale(0.95);
-    box-shadow: 0 3px 10px rgba(186, 104, 200, 0.4);
-  }
+/* Imagens */
+img {
+  width: min(80%, 300px);
+  max-height: 60vh;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.2);
+  margin-top: 1rem;
+}
 
-    
-  @keyframes subir {
-    0% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(-100vh);
-      opacity: 0;
-    }
+/* Botão */
+.botao-video {
+  margin-top: 2rem;
+  background: linear-gradient(45deg, #e91e63, #ba68c8);
+  padding: 15px 35px;
+  color: #fff;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 8px 15px rgba(186, 104, 200, 0.4);
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.botao-video:hover {
+  background: linear-gradient(45deg, #ba68c8, #e91e63);
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(186, 104, 200, 0.5);
+}
+
+/* Corações */
+#container-coracoes-final {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.coracao {
+  width: 20px;
+  height: 20px;
+  background: pink;
+  position: absolute;
+  bottom: 0;
+  transform: rotate(-45deg);
+  animation: subir var(--duracao, 4s) linear forwards;
+  opacity: 0.8;
+  z-index: 0;
+}
+
+.coracao::before,
+.coracao::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: pink;
+  border-radius: 50%;
+}
+
+.coracao::before {
+  top: -10px;
+  left: 0;
+}
+.coracao::after {
+  top: 0;
+  left: 10px;
+}
+
+@keyframes subir {
+  0% {
+    transform: translateY(0) rotate(-45deg);
+    opacity: 1;
   }
-  
-  
-  
-  /* Keyframes */
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+  100% {
+    transform: translateY(-120vh) rotate(-45deg);
+    opacity: 0;
   }
-  
-  @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.03); }
-    100% { transform: scale(1); }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
   }
-  
-  @keyframes float {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-20px); }
+  50% {
+    transform: scale(1.02);
   }
-  
-  @keyframes slideIn {
-    from { transform: translateX(-100%); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-  }
-  
-  @keyframes zoomIn {
-    from { transform: scale(0.5); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-  }
-  
-  @keyframes rotateIn {
-    from { transform: rotate(-180deg); opacity: 0; }
-    to { transform: rotate(0); opacity: 1; }
-  }
-  
+}

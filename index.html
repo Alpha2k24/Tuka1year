@@ -1,76 +1,122 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tukayana</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tukayana 💖</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;700&display=swap"
+    rel="stylesheet" />
 </head>
+
 <body>
+  <main>
+    <section class="tela tela1">
+      <h1>A única prova de amor que preciso é a tua existência.</h1>
+      <div class="painel">
+        <img src="tuka1.jpeg" alt="Tuka 1" />
+        <div class="texto">
+          Estar contigo é um verdadeiro sonho meu bem, nunca pensei que pudesse conhecer alguém assim, sinto que não sou merecedor de tamanha benção. É tão bom sentir... esse amor.
+        </div>
+      </div>
+    </section>
 
-  <section class="tela tela1">
-    <h1>A única prova de amor que preciso é a tua existência.</h1>
-    <img src="tuka1.jpeg" alt="Tuka 1" />
-    <audio autoplay loop>
-      <source src="musica1.mp3" type="audio/mpeg" />
-    </audio>
-  </section>
+    <section class="tela tela2">
+      <h1>Meu coração encontrou o lar no teu sorriso.</h1>
+      <div class="painel">
+        <img src="tuka2.jpeg" alt="Tuka 2" />
+        <div class="texto">
+          Depois de um dia cansativo, depois de momentos de pura ansiedade, depois de batalhas psicológicas intensas, o teu sorriso é a minha paz.
+        </div>
+      </div>
+    </section>
 
-  <section class="tela tela2">
-    <h1>Meu coração encontrou o lar no teu sorriso.</h1>
-    <img src="tuka2.jpeg" alt="Tuka 2" />
-    <audio autoplay loop>
-      <source src="musica2.mp3" type="audio/mpeg" />
-    </audio>
-  </section>
+    <section class="tela tela3">
+      <h1>Tua voz acalma mais que qualquer canção de amor.</h1>
+      <div class="painel">
+        <img src="tuka3.jpeg" alt="Tuka 3" />
+        <div class="texto">
+          Posso ouvir milhares de músicas de amor, no final das contas ouvir a tua voz no meio da noite é o que me dá sossego.
+        </div>
+      </div>
+    </section>
 
-  <section class="tela tela3">
-    <h1>Tua voz acalma mais que qualquer canção de amor.</h1>
-    <img src="tuka3.jpeg" alt="Tuka 3" />
-    <audio autoplay loop>
-      <source src="musica3.mp3" type="audio/mpeg" />
-    </audio>
-  </section>
+    <section class="tela tela4">
+      <h1>És o poema que meu coração sempre quis escrever.</h1>
+      <div class="painel">
+        <img src="tuka4.jpeg" alt="Tuka 4" />
+        <div class="texto">
+          Entre mais de 80 poemas que escrevi, mais de 100 poemas que li. Nada chega perto do quão suave é viver essa poesia quase tangível contigo.
+        </div>
+      </div>
+    </section>
 
-  <section class="tela tela4">
-    <h1>És o poema que meu coração sempre quis escrever.</h1>
-    <img src="tuka4.jpeg" alt="Tuka 4" />
-    <audio autoplay loop>
-      <source src="musica4.mp3" type="audio/mpeg" />
-    </audio>
-  </section>
+    <section class="tela tela5">
+      <h1>Cada dia contigo é um capítulo novo da minha felicidade.</h1>
+      <div class="painel">
+        <img src="tuka5.jpeg" alt="Tuka 5" />
+        <div class="texto">
+          365 dias de muita paixão, fé, lutas, resiliência, fofocas, sustos, risos e sem sombra de dúvidas muito amor. Estamos a montar a nossa história.
+        </div>
+      </div>
+    </section>
 
-  <section class="tela tela5">
-    <h1>Cada dia contigo é um capítulo novo da minha felicidade.</h1>
-    <img src="tuka5.jpeg" alt="Tuka 5" />
-    <audio autoplay loop>
-      <source src="musica5.mp3" type="audio/mpeg" />
-    </audio>
-  </section>
+    <section class="tela tela6">
+      <h1>Amar-te é a certeza mais bonita que eu já tive.</h1>
+      <div class="painel">
+        <img src="tuka6.jpeg" alt="Tuka 6" />
+        <div class="texto">
+          Sempre foi sobre ti, sempre.
+        </div>
+      </div>
+    </section>
 
-  <section class="tela tela6">
-    <h1>Amar-te é a certeza mais bonita que eu já tive.</h1>
-    <img src="tuka6.jpeg" alt="Tuka 6" />
-    <audio autoplay loop>
-      <source src="musica6.mp3" type="audio/mpeg" />
-    </audio>
-  </section>
+    <section class="tela tela7">
+      <h2 class="mensagem">Cada batida do meu coração é pra você 💘</h2>
+      <h2 class="mensagem">Feliz um ano de namoro 💖</h2>
+      <a href="https://youtu.be/cfiCHkBLIl0?feature=shared" target="_blank" class="botao-video">
+        Clica aqui, meu amor!
+      </a>
+      <div id="container-coracoes-final"></div>
+    </section>
+  </main>
+  <audio id="audioFundo" autoplay loop preload="auto">
+    <source src="angelsbymyside.mp3" type="audio/mpeg" />
+    Seu navegador não suporta áudio.
+  </audio>
+  <script>
+    const audioFundo = document.getElementById('audioFundo');
+    audioFundo.volume = 0.05; // volume bem baixinho
 
-  <div class="tela7">
-    <h2 class="mensagem">Cada batida do meu coração é pra você 💘</h2>
-    <h2 class="mensagem">Feliz um ano de namoro 💘</h2>
-    <a 
-    href="https://youtu.be/cfiCHkBLIl0?feature=shared" 
-    target="_blank" 
-    rel="noopener noreferrer" 
-    class="botao-video"
-  >
-    Clica aqui, meu amor!
-  </a>
-    <div id="container-coracoes-final">
-    </div>
-  </div>
-  
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') {
+        audioFundo.play().catch(() => { });
+      } else if (document.visibilityState === 'hidden') {
+        audioFundo.pause();
+      }
+    });
 
+    document.addEventListener('click', iniciarAudio);
+    document.addEventListener('touchstart', iniciarAudio);
+
+    function iniciarAudio() {
+      audioFundo.play().catch(() => { });
+      document.removeEventListener('click', iniciarAudio);
+      document.removeEventListener('touchstart', iniciarAudio);
+    }
+
+    // Quando clicar no link "Clica aqui, meu amor!", para o áudio
+    const botaoVideo = document.querySelector('.botao-video');
+    botaoVideo.addEventListener('click', () => {
+      audioFundo.pause();
+      audioFundo.currentTime = 0; // opcional, volta para o começo
+    });
+  </script>
+
+
+
+  <script src="script.js"></script>
 </body>
+
 </html>
